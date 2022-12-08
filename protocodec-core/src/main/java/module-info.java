@@ -1,0 +1,2 @@
+module protocodec.core {
+}

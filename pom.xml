@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.linliangjun</groupId>
+    <artifactId>protocodec</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <encoding>UTF-8</encoding>
+        <java.version>17</java.version>
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- 编译插件 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <showWarnings>true</showWarnings>               <!-- 显示警告 -->
+                        <!-- javac 参数 -->
+                        <encoding>${encoding}</encoding>                <!-- 指定源文件使用的字符编码 -->
+                        <release>${java.version}</release>              <!-- 为指定的 Java SE 发行版编译 -->
+                        <compilerArgs>
+                            <arg>-Xlint:all</arg>                       <!-- 启用警告（所有）-->
+                        </compilerArgs>
+                        <failOnWarning>true</failOnWarning>             <!-- 出现警告时终止编译 -->
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
